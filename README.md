@@ -1,2 +1,7 @@
-# aws-kms-workshop
+## AWS Kms Workshop
+
 This AWS KMS workshop pretends to provide a better understanding on AWS Key Management Service (KMS) through a set of practical exercises. Even though previous experience with AWS KMS is not needed, it would be helpful to read the documentation listed in the Pre-Requisites section below, before starting the Workshop.
+
+## License
+
+This library is licensed under the Apache 2.0 License. 
