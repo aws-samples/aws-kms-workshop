@@ -1,1 +1,1 @@
-Resources files required for the Workshop.
+Resources for the Workshop

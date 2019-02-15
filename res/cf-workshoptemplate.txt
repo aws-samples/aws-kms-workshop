@@ -1,0 +1,56 @@
+{
+      "AWSTemplateFormatVersion" : "2010-09-09",
+         
+      "Resources" : {
+
+         "workshopbucket" : {
+             "Type" : "AWS::S3::Bucket",
+             "Properties": {
+                "BucketName" : { "Fn::Join" : [ "-", [ "kmsworkshop", { "Ref" : "AWS::AccountId" } ] ] }
+			   }
+                       },
+	"KMSWorkshopRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName":  "KMSWorkshop-InstanceInitRole",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "ec2.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+          "arn:aws:iam::aws:policy/AWSCloudTrailReadOnlyAccess",
+	  "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+
+         ]
+      }
+    },
+    "KMSWorkshopInstanceRole": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "InstanceProfileName":  "KMSWorkshop-InstanceInitRole",
+        "Roles": ["KMSWorkshop-InstanceInitRole"],
+        "Path": "/"
+      }
+    }
+
+
+
+
+
+
+
+      }
+}
