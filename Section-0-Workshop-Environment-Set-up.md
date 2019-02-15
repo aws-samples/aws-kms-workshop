@@ -1,7 +1,7 @@
 # Getting things ready to kick-off 
 
 This is the first section of the AWS KMS Workshop where we will get things ready to start with the workshop.
-Please ensure you have read and understood the [prerequisites for the workshop](https://github.com/DanBerr/aws-kms-workshop#pre---requisites). 
+Please ensure you have read and understood the [prerequisites for the workshop](https://github.com/aws-samples/aws-kms-workshop#pre---requisites). 
 
 Especially, though AWS KMS prior knowledge is not really needed, Workshop is more meaningful if you take a look at this introduction to AWS KMS:
 
