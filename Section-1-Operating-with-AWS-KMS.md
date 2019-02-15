@@ -1,10 +1,10 @@
 # Operating with AWS KMS and CMKs
 
 In this first section we are going to learn the core operations of AWS KMS, that would allow us to go deeper into the service and its best practices. The section has four main areas:
- * [Creating Customer Master Keys (CMK)](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#creating-customer-master-keys-cmk)
- * [Generate CMKs with your own key material](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#generate-cmks-with-your-own-key-material)
- * [Rotating AWS KMS CMKs](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#rotating-AWS-KMS-CMKs)
- * [Deleting AWS KMS CMKs](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#deleting-AWS-KMS-CMKs)
+ * [Creating Customer Master Keys (CMK)](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#creating-customer-master-keys-cmk)
+ * [Generate CMKs with your own key material](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#generate-cmks-with-your-own-key-material)
+ * [Rotating AWS KMS CMKs]https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#rotating-AWS-KMS-CMKs)
+ * [Deleting AWS KMS CMKs](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#deleting-AWS-KMS-CMKs)
 ----
 
 
@@ -505,6 +505,6 @@ If for any reason you delete the key we generated with our own key material "**I
 $ delete-imported-key-material --key-id  your-key-id.   
 ```
 
-Congratulations, you have now completed this section of the workshop. You can now go to the second section of the workshop: [Encryption with AWS KMS](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md)
+Congratulations, you have now completed this section of the workshop. You can now go to the second section of the workshop: [Encryption with AWS KMS](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md)
 
 
