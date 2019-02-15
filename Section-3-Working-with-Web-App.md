@@ -4,11 +4,11 @@ In this section, using a Web App, we are going to implement best practices for A
 These best practices are based on the Whitepaper "**[AWS Key Management Service Best Practices](https://d0.awsstatic.com/whitepapers/aws-kms-best-practices.pdf)**"
 
 this section has the following parts:
-* [Installing the Web App](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#installing-the-web-app)
-* [Adding Encryption to the Web App](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#adding-encryption-to-the-web-app)
-* [Working with Key Policies](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#working-with-key-policies)
-* [Key Policies and VPC Private Endpoint](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#vpc-endpoints-and-key-policies)
-* [AWS KMS key tagging](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#key-tagging)
+* [Installing the Web App](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#installing-the-web-app)
+* [Adding Encryption to the Web App](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#adding-encryption-to-the-web-app)
+* [Working with Key Policies](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#working-with-key-policies)
+* [Key Policies and VPC Private Endpoint](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#vpc-endpoints-and-key-policies)
+* [AWS KMS key tagging](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md#key-tagging)
 ---
 
 ### Installing the Web App
@@ -33,7 +33,7 @@ Now, get into the directory and download the sample WebApp with wget as stated b
 
 ```
 $ cd SampleWebApp
-$ sudo wget  https://raw.githubusercontent.com/DanGOTO100/Draft-AWS-KMS-Workshop/master/WebApp.py
+$ sudo wget  https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/master/WebApp.py
 ```
 
 You have downloaded a python application, named "**WebApp.py**", that will be our test Web App.
@@ -103,7 +103,7 @@ Stop the server from running with CTRL+C (maybe twice).
 Download the version of the Web App that **adds Server Side Encryption** and run the server again:
 
 ```
-$  sudo wget https://raw.githubusercontent.com/DanGOTO100/Draft-AWS-KMS-Workshop/master/WebAppEncSSE.py
+$  sudo wget https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/master/WebAppEncSSE.py
 ```
 
 We are going to need the KeyId of the CMK we pretend to use for the encryption of the files. The CMK we want to use is the one generated with our import material and which alias was "**ImportedCMK**".
@@ -484,7 +484,7 @@ For information on the command, please use [this section of the AWS KMS document
 
 
 
-This section of the Workshop is now completed. Please, navigate to [the next Section, Monitoring AWS KMS](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-4-Monitoring-AWS-KMS.md).
+This section of the Workshop is now completed. Please, navigate to [the next Section, Monitoring AWS KMS]https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-4-Monitoring-AWS-KMS.md).
 
 
 
