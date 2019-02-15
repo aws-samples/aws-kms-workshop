@@ -6,6 +6,7 @@ This AWS KMS workshop pretends to provide a better understanding on AWS Key Mana
 
 This library is licensed under the Apache 2.0 License. 
 
+---
 
 The workshop is aligned with the AWS KMS best practices "must-read" Whitepaper "**[AWS Key Management Service Best Practices](https://d0.awsstatic.com/whitepapers/aws-kms-best-practices.pdf)**" and the practices follow its guidelines.
 
