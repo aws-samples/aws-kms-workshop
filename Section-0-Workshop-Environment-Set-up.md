@@ -17,7 +17,7 @@ When you are ready, please follow the following steps to create all the artifact
 
 
 
-2. Download the Workshop's **CloudFormation template on the (Save Link As) [following link](https://raw.githubusercontent.com/DanBerr/aws-kms-workshop/master/res/cf-workshoptemplate.txt)**. This template will create a Role named "**KMSWorkshop-InstanceInitRole**" and an Amazon S3 bucket named "**kmsworkshop-accountid**", where accountid is the identifier of your account.
+2. Download the Workshop's **CloudFormation template on the (Save Link As) [following link](https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/master/res/cf-workshoptemplate.txt)**. This template will create a Role named "**KMSWorkshop-InstanceInitRole**" and an Amazon S3 bucket named "**kmsworkshop-accountid**", where accountid is the identifier of your account.
 
 
    Go to the AWS Console, navigate to "**CloudFormation**" Service and select "**Create Stack**" as you can see in figure below:
@@ -58,6 +58,6 @@ If you need help with the operation, navigate to the EC2 service in the AWS cons
 7. Once the instance is launched and contains the Role, try to connect to it via terminal. If you need help, [check the options here](https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html).
 
 
-If you can connect to your instance then **You should now be ready to start with the workshop**, let's [Go to first section of workshop](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
+If you can connect to your instance then **You should now be ready to start with the workshop**, let's [Go to first section of workshop](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
 
 
