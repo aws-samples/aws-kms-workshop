@@ -1,4 +1,4 @@
-# Getting things ready to kick-off 
+# Workshop environment setup
 
 This is the first section of the AWS KMS Workshop where we will get things ready to start with the workshop.
 Please ensure you have read and understood the [prerequisites for the workshop](https://github.com/aws-samples/aws-kms-workshop#pre---requisites). 
