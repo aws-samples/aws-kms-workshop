@@ -12,7 +12,6 @@ The workshop is aligned with the AWS KMS best practices "must-read" Whitepaper "
 
 The entire Workshop can be covered in around two hours, depending on your previous experience with AWS.
 
----
 
 # Workshop content:
 The workshop contains four different sections (**NOTE:** designed to be followed in order) covering areas like AWS CMKs operations, Types of encryption in AWS KMS with focus on envelope encryption, key policies and best practices working with a demo Web App and AWS KMS monitoring.
