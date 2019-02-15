@@ -18,7 +18,7 @@ When you are ready, please follow the following steps to create all the artifact
 
 
 2. Download the Workshop's **CloudFormation template on the (Save Link As) [following link](https://raw.githubusercontent.com/aws-samples/aws-kms-workshop/master/res/cf-workshoptemplate.txt)**. This template will create a Role named "**KMSWorkshop-InstanceInitRole**" and an Amazon S3 bucket named "**kmsworkshop-accountid**", where accountid is the identifier of your account.
-
+ 
 
    Go to the AWS Console, navigate to "**CloudFormation**" Service and select "**Create Stack**" as you can see in figure below:
    
