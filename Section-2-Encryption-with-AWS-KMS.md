@@ -6,10 +6,10 @@ Envelope encryption is the main encryption vehicle for AWS services using AWS KM
 
 The section is divided in the following parts:
 
-* [How Envelope Encryption works in practice](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#how-envelope-encryption-works-in-practice)
-* [Envelope encryption. Server Side Encryption](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-server-side-encryption)
-* [Envelope encryption. Client Side Encryption](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-client-side-encryption)
-* [Direct Encryption with AWS KMS](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#encryption-using-aws-kms-with-no-data-key)
+* [How Envelope Encryption works in practice](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#how-envelope-encryption-works-in-practice)
+* [Envelope encryption. Server Side Encryption](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-server-side-encryption)
+* [Envelope encryption. Client Side Encryption](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#envelope-encryption-client-side-encryption)
+* [Direct Encryption with AWS KMS](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md#encryption-using-aws-kms-with-no-data-key)
 
 ---
 
@@ -305,7 +305,7 @@ $ aws kms decrypt --ciphertext-blob fileb://NewSecretsEncryptedFile.txt --encryp
 
 If you now take a look at the file we have created with the previous command "**NewSecretsDecryptedFile.txt**". The secret text is now back unencrypted and ready for us.
 
-You have completed the second section of the workshop. In the next section we will work with a real-life Web App and will try to implement best practices. You can now [navigate to the next section of the Workshop](https://github.com/DanBerr/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md)
+You have completed the second section of the workshop. In the next section we will work with a real-life Web App and will try to implement best practices. You can now [navigate to the next section of the Workshop](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-3-Working-with-Web-App.md)
 
 
 
