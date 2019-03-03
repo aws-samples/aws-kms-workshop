@@ -56,7 +56,7 @@ You will notice that the command will fail to run. Our current Role with Power U
 
 We need to provide with permission to generate a data key. 
 
-The process is the same as we have seen twice in the previos section of the workshop, please go back to it if you need to in the following link: "[Create the import material and encrypt it for the import](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#generate-cmks-with-your-own-key-material)"
+The process is the same as we have seen twice in the previos section of the workshop, please go back to it if you need to in the following link: "[Create the import material and encrypt it for the import](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#step-4---import-your-key-material)"
 
 Basically, you need to go back to the AWS console, in the services area navigate to IAM and go to "**Policies**". We are going to create a new policy and attach it to the Power user role.
 
