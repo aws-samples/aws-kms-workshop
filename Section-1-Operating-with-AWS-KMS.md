@@ -60,7 +60,7 @@ Following **least privilege best practices**, we will be attaching policies with
 
 We can add the needed permissions via the CLI or the AWS console. We will use the AWS console for this operation.
 
-Logging into the AWS console by[click here](https://console.aws.amazon.com/?nc2=h_m_mc), and navigate to the IAM service. Then click on "**Roles**", left area of the screen.
+Logging into the AWS console, [click here](https://console.aws.amazon.com/?nc2=h_m_mc), and navigate to the IAM service. Then click on "**Roles**", left area of the screen.
 ![alt text](/res/S1F1%20IAM.png)
 <**Figure-1**>
 
@@ -453,7 +453,7 @@ With the CMKs generated with your own key material, automatic rotation is not po
 
 In order to do so, we would need to create a new key with imported key material, as we did with to cfreate the CMK "ImportedCMK" with external origin and then udpate the alias "**ImportedCMK**". **NOTE:** Timewise, you are **not required** to do it as part of the workshop, as the procedure is already covered.
 
-In case you would like to rotate the CMK created with your own key material, follow the procedure in the section above "[Generate CMK with your own key material](https://github.com/DanGOTO100/Draft-AWS-KMS-Workshop/blob/master/Working-with-CMKs.md#generate-cmks-with-your-own-key-material)".
+In case you would like to rotate the CMK created with your own key material, follow the procedure in the section above "[Generate CMK with your own key material](https://github.com/aws-samples/aws-kms-workshop/blob/master/Working-with-CMKs.md#generate-cmks-with-your-own-key-material)".
 Once you have created a new CMK with you new imported key material, update the alias "**ImportedCMK**" to point to the new key you have provided. Replace **KeyID** in command below with the KeyID of your newly created CMK.
 
 ```
