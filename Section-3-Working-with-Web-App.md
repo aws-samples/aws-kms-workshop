@@ -42,7 +42,7 @@ We will need to obtain the instance IP to connect to it from the Internet. We wi
 
 ```
 $ sudo curl http://169.254.169.254/latest/meta-data/public-ipv4/
-  54.X.X.44
+  X.8.X.17
 ```
 We have the public IP of our instance now, write down as we will use to connect later. Let's run the web server with the following command:
 
