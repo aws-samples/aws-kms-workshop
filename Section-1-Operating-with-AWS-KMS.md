@@ -453,7 +453,7 @@ With the CMKs generated with your own key material, automatic rotation is not po
 
 In order to do so, we would need to create a new key with imported key material, as we did with to cfreate the CMK "ImportedCMK" with external origin and then udpate the alias "**ImportedCMK**". **NOTE:** Timewise, you are **not required** to do it as part of the workshop, as the procedure is already covered.
 
-In case you would like to rotate the CMK created with your own key material, follow the procedure in the section above "[Generate CMK with your own key material](https://github.com/aws-samples/aws-kms-workshop/blob/master/Working-with-CMKs.md#generate-cmks-with-your-own-key-material)".
+In case you would like to rotate the CMK created with your own key material, follow the procedure in the section above "[Generate CMK with your own key material](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-1-Operating-with-AWS-KMS.md#generate-cmks-with-your-own-key-material)". 
 Once you have created a new CMK with you new imported key material, update the alias "**ImportedCMK**" to point to the new key you have provided. Replace **KeyID** in command below with the KeyID of your newly created CMK.
 
 ```
