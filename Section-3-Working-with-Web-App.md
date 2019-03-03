@@ -53,7 +53,7 @@ $ sudo python WebApp.py 80
 
 ```
 
-Go to your browser now and navigate to the Web App in the IP you obtained in the previous step:  http://54.X.X.44
+Go to your browser now and navigate to the Web App in the IP you obtained in the previous step:  http://X.8.X.17
 
 
 **Note:** if you run into issues with reaching the server, it may be worthy to recheck the security group associated with the server, ensure HTTP traffic is allowed. Use [this link to the Security Groups documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html). 
@@ -484,7 +484,7 @@ For information on the command, please use [this section of the AWS KMS document
 
 
 
-This section of the Workshop is now completed. Please, navigate to [the next Section, Monitoring AWS KMS]https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-4-Monitoring-AWS-KMS.md).
+This section of the Workshop is now completed. Please, navigate to [the next Section, Monitoring AWS KMS](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-4-Monitoring-AWS-KMS.md).
 
 
 
