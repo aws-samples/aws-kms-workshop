@@ -60,7 +60,7 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_POST(self):
         """Serve a POST request."""
         r, info = self.deal_post_data()
-        print r, info, "by: ", self.client_address
+        print(r, info, "by: ", self.client_address)
         f = StringIO()
         f.write('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">')
         f.write("<html>\n<title>Upload Result Page</title>\n")
@@ -177,7 +177,9 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             pathsplit = path.split('/')
             s3path = pathsplit[-1]
             #remake the path without the 'S3' tag
-            path = pathsplit[0]+ '/' + pathsplit[1]+ '/' + pathsplit[2] + '/' +pathsplit[3]+ '/' + "localfile-"+pathsplit[-1]
+            #path = pathsplit[0]+ '/' + pathsplit[1]+ '/' + pathsplit[2] + '/' +pathsplit[3]+ '/' + "localfile-"+pathsplit[-1]
+            # Serve content from our CWD - not ideal, but simple
+            path = os.getcwd() + '/' + "localfile-"+pathsplit[-1]
             KEY = str(s3path)
             try:
                 my_bucket.download_file(KEY, "localfile-"+KEY)

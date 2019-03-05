@@ -69,7 +69,7 @@ Upload it through the WebApp.
 
 
 You should get to a page informing that the operation was successul. 
-Now, go back ("**press back link in Success page**)  and check that it is the file is showing up in the main serfver's page. You can now click on it, to download it and display it.
+Now, go back ("**press back link in Success page**)  and check that it is the file is showing up in the main server's page. You can now click on it, to download it and display it.
 
 If you refresh the page in your browser, you will notice the same file appears now as a local file with prefix "localfile". The Web App is designed to create also a further local cache.
 
@@ -163,7 +163,7 @@ Key policies are the primary resource for controlling "who" has access to do "wh
 You have a full description about them in the following [AWS KMS link](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html), in case you want to go deeper - and for the importance of the topic,  you should. 
 We are going to work with some practical examples. 
 
-Up to now, the assigned IAM  role ("**KMSWorkshop-InstaceInitRole**") of our working instance allows us to perform many things in AWS KMS.  Following best practices like "**Least Privilege**" and "**Separation of Duties**", it can be, for example, that our instance is meant to be used only for uploading data with server side encryption, but not decrypt it and download it.
+Up to now, the assigned IAM  role ("**KMSWorkshop-InstanceInitRole**") of our working instance allows us to perform many things in AWS KMS.  Following best practices like "**Least Privilege**" and "**Separation of Duties**", it can be, for example, that our instance is meant to be used only for uploading data with server side encryption, but not decrypt it and download it.
 Maybe the download and decrypt operation needs to be done from another instance with more specific security constraints. 
 
 How can we comply with these requirements? We will use two main resources:
@@ -181,7 +181,7 @@ $ aws kms list-key-policies --key-id your-key-id
     ]
 }
 ```
-**NOTE:** Remember that if you run into trouble with this command and get errors complaining about "import awscli.clidriver", a verions mismatch with AWS CLI installed by boto3, then use the following command to go back to normal:
+**NOTE:** Remember that if you run into trouble with this command and get errors complaining about "import awscli.clidriver", a versions mismatch with AWS CLI installed by boto3, then use the following command to go back to normal:
 
 ```
 $ sudo yum downgrade aws-cli.noarch python27-botocore -y
@@ -220,7 +220,7 @@ This has policy has two important effects (more information in [this link](https
 * Enables IAM policies to allow access to the CMK. Giving the AWS account full access to the CMK does this; it enables you to use IAM policies to give IAM users and roles in the account access to the CMK. It does not by itself give any IAM users or roles access to the CMK, but it enables you to use IAM policies to do so.
 
 Let's modify the permission of the role assigned to the instance, **allowing it only to encrypt, but not decrypt**.
-Let's use the console. Open the AWS Console. Navigate to IAM service, left column "Roles" and search for the role currently assigned to the instance: **KMSWorkshop-InstaceInitRole**. 
+Let's use the console. Open the AWS Console. Navigate to IAM service, left column "Roles" and search for the role currently assigned to the instance: **KMSWorkshop-InstanceInitRole**. 
 
 
 Within the role, locate the policy we attached when working in the second section of the workshop, we named it "**KMSWorkshop-AditionalPermissions**". Click the button "**Edit Policy**". Expand the Actions-Access Level-Write section and remove the check box on "**Decrypt**". Review policy and save it.
@@ -242,7 +242,7 @@ Now try to upload a new file to S3. It will succeed it. Now try and download it.
 
 Now this role is able to encrypt but not to decrypt. Furthermore, we want to enforce "**Least Privilege**" access and ensure that the encryption Role, providing capability to encrypt, is only used from our account, and not subject to Cross-Account Role access policies that could grant access to the CMK. For that, we will use a handy Key policy.
 
-We need to identify our current role "**KMSWorkshop-InstaceInitRole**" ARN in order to link it to the key policy. Go back to the console, IAM service, click Roles. Search for the role currently assigned to the instance: **KMSWorkshop-InstaceInitRole** and click on it.  In the upper part of the screen you have the associated ARN. As part of the Role ARN you have your account Id. This is the generic structure: 
+We need to identify our current role "**KMSWorkshop-InstanceInitRole**" ARN in order to link it to the key policy. Go back to the console, IAM service, click Roles. Search for the role currently assigned to the instance: **KMSWorkshop-InstanceInitRole** and click on it.  In the upper part of the screen you have the associated ARN. As part of the Role ARN you have your account Id. This is the generic structure: 
 
 ```
 arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME
@@ -319,7 +319,7 @@ With this policy we will ensure that only instances that have the appropriate ro
       "Sid": "Allow for Use only within our Account",
       "Effect": "Deny",
       "NotPrincipal": { 
-        "AWS": [ "arn:aws:iam::your-acount-id:role/KMSWorkshop-InstaceInitRole", "arn:aws:iam::your-acount-id:root"]
+        "AWS": [ "arn:aws:iam::your-acount-id:role/KMSWorkshop-InstanceInitRole", "arn:aws:iam::your-acount-id:root"]
       },
       "Action": "kms:*",
       "Resource": "*",
@@ -350,7 +350,7 @@ As an example, conditions can work with **encryption context** to be able to res
 ```
 
 We could use that to add a condition in AWS KMS Key Policy like "**kms:EncryptionContextKey**". 
-There is a full example in the [documentation here](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys). Make sure you click the link and check that you undertand how the key policy is enforced using encryption context as condition.
+There is a full example in the [documentation here](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys). Make sure you click the link and check that you understand how the key policy is enforced using encryption context as condition.
 
 Finally, let's try to add another layer of security via **MFA**. In the key policy we might request that the users that are going to use the CMK have passed through a MFA process. 
 MFA is enforced through a condition as seen below:
@@ -389,7 +389,7 @@ MFA is enforced through a condition as seen below:
 }
 ```
 
-In this key policy, we don´t allow certain very sensitive operations to take place, unless the user or the role has gone through a MFA authentication process in the last 5 minutes (300 seconds). Make sure you understand the policy. After the examples seen by now, you should be able to understsand how it works. We will not enforce as in the workshop we are working with roles and not with users. However the overall concept is the same.
+In this key policy, we don´t allow certain very sensitive operations to take place, unless the user or the role has gone through a MFA authentication process in the last 5 minutes (300 seconds). Make sure you understand the policy. After the examples seen by now, you should be able to understand how it works. We will not enforce as in the workshop we are working with roles and not with users. However the overall concept is the same.
 
 ---
 
@@ -401,7 +401,7 @@ A VPC endpoint enables you to privately connect your VPC to supported AWS servic
 
 When you use a VPC endpoint, **communication between your VPC and AWS KMS is conducted entirely within the AWS network**.
 You can even specify the VPC endpoint in [AWS KMS API operations](https://docs.aws.amazon.com/kms/latest/APIReference/) and [AWS CLI commands](https://docs.aws.amazon.com/kms/latest/APIReference/).
-In order not to make the workshop two extensive **it is not required to set up the VPC Endpoint**. We will mention it, so you know what you can do with it.
+In order not to make the workshop too extensive **it is not required to set up the VPC Endpoint**. We will mention it, so you know what you can do with it.
 
 As a reference: the VPC endpoint can  easily be created from the console, you can follow the steps in this [link to the documentation](https://docs.aws.amazon.com/kms/latest/developerguide/kms-vpc-endpoint.html).
 Once an endpoint is created you can enforce communication through it with commands as seen below, where parameter "**--endpoint-url**" is added. 
@@ -434,7 +434,7 @@ A sample policy would be like the one below. Please ensure you understand the co
       "Sid": "Allow for Use only within our VPC",
       "Effect": "Deny",
       "Principal": {
-        "AWS": "arn:aws:iam::your-account-id:role/KMSWorkshop-InstaceInitRole"
+        "AWS": "arn:aws:iam::your-account-id:role/KMSWorkshop-InstanceInitRole"
       },
       "Action": [
         "kms:Encrypt",
@@ -462,8 +462,8 @@ With that key policy, an extra layer of protection the key would be established,
 
 ### Key Tagging
 
-Tagging is an important strategy for managning CMKs in AWS KMS.
-You can add, change, and delete tags for customer managed CMKs. Each tag consists of a tag key and a tag valuethat you define.
+Tagging is an important strategy for managing CMKs in AWS KMS.
+You can add, change, and delete tags for customer managed CMKs. Each tag consists of a tag key and a tag value that you define.
 You can add tags to a CMK when you first create them. Then, add, edit, and delete tags at any time. 
 
 To add a tag to the CMK we have been working with, you can use the console or the CLI. Let's tag our CMK "**ImportedCMK**", with a project it may belong to, just an a example.
