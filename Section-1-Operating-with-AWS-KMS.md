@@ -181,7 +181,7 @@ For the workshop, we will see how creating CMKs, policies and tags can be done f
 With AWS KMS you can import your own key material to create a CMK. In order to do so, a special wrapping is needed to upload your key material to AWS KMS. See more details in [this part of the KMS documentation](https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html).
 In this section we are going to generate a CMK importing our own key material.
 
-### What are going to do?
+### What are we going to do?
 
 In order to experiment how to import your own key material, we are going to take a few steps.
 
