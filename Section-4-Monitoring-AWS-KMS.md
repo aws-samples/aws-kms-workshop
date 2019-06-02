@@ -1,13 +1,13 @@
 # Monitoring and Logging in AWS KMS
 
 Monitoring is an important part of understanding the availability, state, and usage of your customer master keys (CMKs) in AWS KMS and maintaining the reliability and performance of your AWS solutions. 
-As as baseline, in AWS KMS you may want to monitor:
+As a baseline, in AWS KMS you may want to monitor:
 
 * Activity related to cryptographic operations, such as Encrypt or Decrypt.
-* Activity related to management operations on the CMKs: EnableKey, ImportKeyMarterial,etc…
+* Activity related to management operations on the CMKs: EnableKey, ImportKeyMaterial,etc…
 * Activity on other events and metrics, such as key expiration, key rotation or time remaining until imported key material expiration.
 
-To monitor that activity we will the AWS service [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) and [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/), escecially its logs, events and alarms.
+To monitor that activity we will use the AWS service [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) and [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/), especially its logs, events and alarms.
 
 ---
 ### AWS KMS and AWS CloudTrail
@@ -26,16 +26,16 @@ This action has been logged in AWS CloudTrail, and we can obtain its details. Le
 
 Go back to the AWS console in your browser, navigate to "**CloudTrail**" service and select "**Event history**" on the right panel. You have the full history of events and they can be filtered for a fine grained view.
 
-To establish a filter, go to filter area, select "**Event name**", and set the name as "**GenerateDataKey**". Press "**Enter**" while still on the "**Enter Event Name**", leaving "**Select time range**" as it is. Alterntively, you could select a time range if you wish.
+To establish a filter, go to filter area, select "**Event name**", and set the name as "**GenerateDataKey**". Press "**Enter**" while still on the "**Enter Event Name**", leaving "**Select time range**" as it is. Alternatively, you could select a time range if you wish.
 
 You will have a display of the GenerateDataKey operations that you have performed during the workshop. You can see image below as a reference:
 
 ![alt text](/res/S4F1.png)
 <**Figure-1**>
 
-If you open any of the request in the list,  you will have further details of the operation that took place and. For example take a look at the "**User name**" value responsible for the requests and write it down, we will use it later. These parameters provides us with a full view of who, what, how and when an operation took place.
+If you open any of the request in the list,  you will have further details of the operation that took place and. For example, take a look at the "**User name**" value responsible for the requests and write it down, we will use it later. These parameters provide us with a full view of who, what, how and when an operation took place.
 
-In CloudTrail you can not only filter by event names on AWS KMS operations. There are other filter parameters that you can use. For example, you can use filtering by "**Event source**", that would allow you understand which AWS service has made request.
+In CloudTrail you can not only filter by event names on AWS KMS operations. There are other filter parameters that you can use. For example, you can use filtering by "**Event source**", that would allow you to understand which AWS service has made a request.
 
 The filter parameter "**User name**" allows you to filter by the identity of the user referenced in the event.
 Another useful parameter is the "**AWS Access Key**". With it, you can filter by the AWS access key ID that was used to sign the request. If the request was made with temporary credentials, the access key ID of the temporary credential is what will show up as the access key.
@@ -95,7 +95,7 @@ Now just provide a name to the rule and hit "**Create Rule**".
 You have just created a rule that will help you audit AWS KMS usage. Everytime a Data Key is generated, you wil be notified in the email address you provided. 
 
 If everything went well you should  receive an email notifying you of the operation that took place. 
-**Note:** Don´t forget to hae confirmed your subcripution to SNS topic (you should have recevied an email).
+**Note:** Don´t forget to hae confirmed your subscription to SNS topic (you should have recevied an email).
 We have established a notification for a specific operation. For a comprehensive list of the log entries that AWS KMS generates in AWS CloudTrail, please check the following [section of the AWS KMS documentation](https://docs.aws.amazon.com/kms/latest/developerguide/logging-using-cloudtrail.html).
 
 
@@ -120,7 +120,7 @@ In this case, we only have a metric coming from AWS KMS so it should be easy for
 You can use the SNS topic that we created before: "**snsworkshop**". 
 The process is well described in previous link, so it is not reproduced here in the workshop's instructions. 
 
-In case you need more details about building the alarm, please look into how to build an alarm from AWS KMS metrics in the followin [section of the AWS KMS documentation](https://docs.aws.amazon.com/kms/latest/developerguide/monitoring-cloudwatch.html#key-material-expiration-alarm). 
+In case you need more details about building the alarm, please look into how to build an alarm from AWS KMS metrics in the following [section of the AWS KMS documentation](https://docs.aws.amazon.com/kms/latest/developerguide/monitoring-cloudwatch.html#key-material-expiration-alarm). 
 
 
 ---
