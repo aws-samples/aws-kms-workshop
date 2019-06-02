@@ -505,5 +505,5 @@ $ aws kms delete-imported-key-material --key-id  your-key-id.
 ```
 
 Congratulations, you have now completed this section of the workshop. You can now go to the second section of the workshop: [Encryption with AWS KMS](https://github.com/aws-samples/aws-kms-workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md)
-
+ 
 
