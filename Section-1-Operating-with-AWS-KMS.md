@@ -78,7 +78,7 @@ Click on the role and then on "**Attach Policies**" button, we are going to prov
 <**Figure-3**>
 
 
-Now, search "**AWSKeyManagement**", and select the policy "**AWSKeyManagementSystemPowerUser**".  That is the policy we are going to use for the instance role. **Please note**, the assigment of KMS Power User permissions is **just** for the initial walk-through in KMS, a typical user might not need the whole set of permissions. Later in the workshop we will work on how to implement more fine grained "Least Privilege" access, according to best practices,  in order to assign appropriate permissions to users and roles into KMS operations.
+Now, search "**AWSKeyManagement**", and select the policy "**AWSKeyManagementServicePowerUser**".  That is the policy we are going to use for the instance role. **Please note**, the assigment of KMS Power User permissions is **just** for the initial walk-through in KMS, a typical user might not need the whole set of permissions. Later in the workshop we will work on how to implement more fine grained "Least Privilege" access, according to best practices,  in order to assign appropriate permissions to users and roles into KMS operations.
 As this point we can review the policy, just by clicking on the small black arrow close to the policy name to expand it.
 
 ![Figure-4](/res/S1F4%20KMSPowerUserPolicy.png)
